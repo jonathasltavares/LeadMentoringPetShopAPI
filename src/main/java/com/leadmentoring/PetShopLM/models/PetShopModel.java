@@ -15,16 +15,16 @@ public class PetShopModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
-    private String petshop_name;
+    @Column(name ="petshop_name",nullable = false, unique = true)
+    private String name;
 
     @Lob
-    @Column
-    private byte[] petshop_logo;
+    @Column(name ="petshop_logo",nullable = false)
+    private byte[] logo;
 
-    @Column(nullable = false, unique = true)
-    private String petshop_email;
+    @Column(name ="petshop_email",nullable = false, unique = true)
+    private String email;
 
-    @Column(nullable = false, unique = true)
-    private String petshop_password;
+    @Column(name ="petshop_password",nullable = false, unique = true)
+    private String password;
 }
