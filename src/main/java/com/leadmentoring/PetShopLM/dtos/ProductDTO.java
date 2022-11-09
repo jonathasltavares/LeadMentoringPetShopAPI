@@ -14,6 +14,46 @@ public class ProductDTO {
     @NotBlank
     private Float price;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
+    public PetShopModel getPetshop_id() {
+        return petshop_id;
+    }
+
+    public void setPetshop_id(PetShopModel petshop_id) {
+        this.petshop_id = petshop_id;
+    }
+
     @NotBlank
     private byte[] photo;
 
