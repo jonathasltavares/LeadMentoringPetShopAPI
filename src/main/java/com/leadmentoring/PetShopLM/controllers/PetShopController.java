@@ -39,7 +39,11 @@ public class PetShopController {
         return ResponseEntity.status(HttpStatus.OK).body(petShopService.findAll(pageable));
     }
     @GetMapping("/login")
-    public ResponseEntity<PetShopModel> getByEmail(@RequestParam("email") String email) {
+    public ResponseEntity<Object> getByEmail(@RequestParam("email") String email, @RequestParam("password") String password) {
+        PetShopModel petshop = petShopService.findByEmail(email);
+        if(!petshop.getPassword().equals(password)){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("PetShop not found.");
+        }
         return ResponseEntity.status(HttpStatus.OK).body(petShopService.findByEmail(email));
     }
 
