@@ -10,10 +10,13 @@ public class PetShopDTO {
     private String name;
 
     @NotBlank
-    private byte[] logo;
+    private String logo;
 
     @NotBlank
     private String email;
+
+    @NotBlank
+    private String password;
 
     public String getName() {
         return name;
@@ -23,11 +26,11 @@ public class PetShopDTO {
         this.name = name;
     }
 
-    public byte[] getLogo() {
+    public String getLogo() {
         return logo;
     }
 
-    public void setLogo(byte[] logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
     }
 
@@ -46,7 +49,4 @@ public class PetShopDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    @NotBlank
-    private String password;
 }
