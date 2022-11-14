@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -39,8 +38,12 @@ public class PetShopController {
         return ResponseEntity.status(HttpStatus.OK).body(petShopService.findAll(pageable));
     }
     @GetMapping("/login")
-    public ResponseEntity<PetShopModel> getByEmail(@RequestParam("email") String email) {
-        return ResponseEntity.status(HttpStatus.OK).body(petShopService.findByEmail(email));
+    public ResponseEntity<Object> getByEmail(@RequestParam("email") String email, @RequestParam("password") String password) {
+        PetShopModel petshop = petShopService.findByEmail(email);
+        if(petshop!=null && petshop.getPassword().equals(password)){
+            return ResponseEntity.status(HttpStatus.OK).body(petShopService.findByEmail(email));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("PetShop not found.");
     }
 
     @GetMapping("/{id}")
