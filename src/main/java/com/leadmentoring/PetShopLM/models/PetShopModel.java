@@ -18,9 +18,9 @@ public class PetShopModel implements Serializable {
     @Column(name ="petshop_name",nullable = false, unique = true)
     private String name;
 
-    @Lob
+
     @Column(name ="petshop_logo",nullable = false)
-    private byte[] logo;
+    private String logo;
 
     @Column(name ="petshop_email",nullable = false, unique = true)
     private String email;
