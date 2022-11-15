@@ -3,6 +3,7 @@ package com.leadmentoring.PetShopLM.dtos;
 import com.leadmentoring.PetShopLM.models.PetShopModel;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class PetDTO {
     @NotBlank
@@ -11,7 +12,7 @@ public class PetDTO {
     @NotBlank
     private String description;
 
-    @NotBlank
+    @NotNull
     private Float price;
 
     @NotBlank
@@ -20,7 +21,7 @@ public class PetDTO {
     @NotBlank
     private String gender;
 
-    @NotBlank
+    @NotNull
     private int age;
 
     public String getName() {
