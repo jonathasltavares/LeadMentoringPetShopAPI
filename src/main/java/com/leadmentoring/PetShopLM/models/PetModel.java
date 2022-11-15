@@ -38,6 +38,6 @@ public class PetModel implements Serializable {
     private float weight;
 
     @ManyToOne
-    @JoinColumn(name="petshop_id")
+    @JoinColumn(name="petshop_id", nullable = false)
     private PetShopModel petshop_id;
 }

@@ -29,6 +29,6 @@ public class ProductModel implements Serializable {
     private String photo;
 
     @ManyToOne
-    @JoinColumn(name="petshop_id")
+    @JoinColumn(name="petshop_id", nullable = false)
     private PetShopModel petshop_id;
 }
