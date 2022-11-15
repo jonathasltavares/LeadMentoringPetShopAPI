@@ -6,6 +6,7 @@ import com.leadmentoring.PetShopLM.repositories.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,7 +40,7 @@ public class ProductService {
     }
 
 
-    public ProductModel findByPetshop(UUID id) {
+    public Page<ProductModel> findByPetshop(UUID id) {
         return productRepository.findAllByPetshopId(id);
     }
 }

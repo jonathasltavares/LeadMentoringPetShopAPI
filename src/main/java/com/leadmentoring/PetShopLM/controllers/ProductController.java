@@ -41,7 +41,7 @@ public class ProductController {
     }
 
     @GetMapping("/petshop")
-    public ResponseEntity<Object> getByEmail(@RequestParam("id") UUID id) {
+    public ResponseEntity<Page<ProductModel>> getByEmail(@RequestParam("id") UUID id) {
         return ResponseEntity.status(HttpStatus.OK).body(productService.findByPetshop(id));
     }
     @GetMapping("/{id}")
