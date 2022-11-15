@@ -35,4 +35,8 @@ public class ProductService {
     public void delete(ProductModel productModel) {
         productRepository.delete(productModel);
     }
+
+    public ProductModel findByPetshop(String petshop_id) {
+        return productRepository.findByPetshop_id();
+    }
 }

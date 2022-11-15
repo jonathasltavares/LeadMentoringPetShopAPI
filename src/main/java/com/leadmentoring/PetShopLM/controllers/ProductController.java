@@ -2,6 +2,7 @@ package com.leadmentoring.PetShopLM.controllers;
 
 
 import com.leadmentoring.PetShopLM.dtos.ProductDTO;
+import com.leadmentoring.PetShopLM.models.PetShopModel;
 import com.leadmentoring.PetShopLM.models.ProductModel;
 import com.leadmentoring.PetShopLM.services.ProductService;
 import org.springframework.beans.BeanUtils;
@@ -39,6 +40,12 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productService.findAll(pageable));
     }
 
+    @GetMapping("/petshop")
+    public ResponseEntity<Object> getByEmail(@RequestParam("petshop_id") String petshop_id) {
+        ProductModel product = productService.findByPetshop(petshop_id);
+
+        return ResponseEntity.status(HttpStatus.OK).body(productService.findByPetshop(petshop_id));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOneProduct(@PathVariable(value = "id") UUID id){
         Optional<ProductModel> productModelOptional = productService.findById(id);
@@ -63,7 +70,7 @@ public class ProductController {
                                             @RequestBody @Valid ProductDTO productDTO){
         Optional<ProductModel> productModelOptional = productService.findById(id);
         if (!productModelOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Productt not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
         var productModel = new ProductModel();
         BeanUtils.copyProperties(productDTO, productModel);
