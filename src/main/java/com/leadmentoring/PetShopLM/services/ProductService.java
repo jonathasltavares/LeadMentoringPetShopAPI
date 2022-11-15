@@ -39,7 +39,7 @@ public class ProductService {
     }
 
 
-    public ProductModel findByPetshop(UUID petshop) {
-        return productRepository.findAllByPetshopId(petshop);
+    public ProductModel findByPetshop(UUID id) {
+        return productRepository.findAllByPetshopId(id);
     }
 }
