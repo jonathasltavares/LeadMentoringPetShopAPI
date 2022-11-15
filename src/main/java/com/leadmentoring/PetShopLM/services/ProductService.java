@@ -1,5 +1,6 @@
 package com.leadmentoring.PetShopLM.services;
 
+import com.leadmentoring.PetShopLM.models.PetShopModel;
 import com.leadmentoring.PetShopLM.models.ProductModel;
 import com.leadmentoring.PetShopLM.repositories.ProductRepository;
 import org.springframework.data.domain.Page;
@@ -36,7 +37,7 @@ public class ProductService {
         productRepository.delete(productModel);
     }
 
-    public ProductModel findByPetshop(String petshop) {
+    public ProductModel findByPetshop(PetShopModel petshop) {
         return productRepository.findByPetshop(petshop);
     }
 }
