@@ -5,6 +5,7 @@ import com.leadmentoring.PetShopLM.models.ProductModel;
 import com.leadmentoring.PetShopLM.repositories.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,7 +38,8 @@ public class ProductService {
         productRepository.delete(productModel);
     }
 
-    public ProductModel findByPetshop(PetShopModel petshop) {
-        return productRepository.findByPetshop(petshop);
+
+    public ProductModel findByPetshop(String petshop) {
+        return productRepository.findAllByPetshopId(petshop);
     }
 }
