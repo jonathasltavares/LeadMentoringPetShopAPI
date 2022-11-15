@@ -15,7 +15,7 @@ public class PetDTO {
     private Float price;
 
     @NotBlank
-    private byte[] photo;
+    private String photo;
 
     @NotBlank
     private String gender;
@@ -47,11 +47,11 @@ public class PetDTO {
         this.price = price;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 

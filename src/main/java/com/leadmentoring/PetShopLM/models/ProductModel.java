@@ -24,9 +24,9 @@ public class ProductModel implements Serializable {
     @Column(name = "product_price", nullable = false)
     private Float price;
 
-    @Lob
+
     @Column(name="product_photo", nullable = false)
-    private byte[] photo;
+    private String photo;
 
     @ManyToOne
     @JoinColumn(name="petshop_id")

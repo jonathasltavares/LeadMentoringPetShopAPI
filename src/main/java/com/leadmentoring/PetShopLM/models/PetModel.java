@@ -24,9 +24,9 @@ public class PetModel implements Serializable {
     @Column(name = "pet_price", nullable = false)
     private Float price;
 
-    @Lob
+
     @Column(name="pet_photo", nullable = false)
-    private byte[] photo;
+    private String photo;
 
     @Column(name="pet_gender", nullable = false)
     private String gender;

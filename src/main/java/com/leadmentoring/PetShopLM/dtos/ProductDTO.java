@@ -38,11 +38,11 @@ public class ProductDTO {
         this.price = price;
     }
 
-    public byte[] getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(byte[] photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -55,7 +55,7 @@ public class ProductDTO {
     }
 
     @NotBlank
-    private byte[] photo;
+    private String photo;
 
     @NotBlank
     private PetShopModel petshop_id;
