@@ -41,8 +41,8 @@ public class ProductController {
     }
 
     @GetMapping("/petshop")
-    public ResponseEntity<Page<ProductModel>> getByEmail(@RequestParam("id") UUID id) {
-        return ResponseEntity.status(HttpStatus.OK).body(productService.findByPetshop(id));
+    public ResponseEntity<Page<ProductModel>> getByEmail(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable,@RequestParam("id") UUID id) {
+        return ResponseEntity.status(HttpStatus.OK).body(productService.findByPetshop(id, pageable));
     }
     @GetMapping("/{id}")
     public ResponseEntity<Object> getOneProduct(@PathVariable(value = "id") UUID id){
