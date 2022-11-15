@@ -58,6 +58,6 @@ public class ProductDTO {
     @NotBlank
     private String photo;
 
-    @NotBlank
+    @NotNull
     private PetShopModel petshop_id;
 }

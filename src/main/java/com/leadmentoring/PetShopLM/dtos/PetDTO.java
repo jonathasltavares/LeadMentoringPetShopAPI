@@ -88,9 +88,9 @@ public class PetDTO {
         this.petshop_id = petshop_id;
     }
 
-    @NotBlank
+    @NotNull
     private float weight;
 
-    @NotBlank
+    @NotNull
     private PetShopModel petshop_id;
 }
