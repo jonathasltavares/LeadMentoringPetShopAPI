@@ -36,7 +36,7 @@ public class ProductService {
         productRepository.delete(productModel);
     }
 
-    public ProductModel findByPetshop(String petshop_id) {
-        return productRepository.findByPetshop_id();
+    public ProductModel findByPetshop(String petshop) {
+        return productRepository.findByPetshop(petshop);
     }
 }

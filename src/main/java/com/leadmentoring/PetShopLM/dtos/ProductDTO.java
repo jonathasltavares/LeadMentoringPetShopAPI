@@ -47,17 +47,17 @@ public class ProductDTO {
         this.photo = photo;
     }
 
-    public PetShopModel getPetshop_id() {
-        return petshop_id;
+    public PetShopModel getPetshop() {
+        return petshop;
     }
 
-    public void setPetshop_id(PetShopModel petshop_id) {
-        this.petshop_id = petshop_id;
+    public void setPetshop(PetShopModel petshop) {
+        this.petshop = petshop;
     }
 
     @NotBlank
     private String photo;
 
     @NotNull
-    private PetShopModel petshop_id;
+    private PetShopModel petshop;
 }
