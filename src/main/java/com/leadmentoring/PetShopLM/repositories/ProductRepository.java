@@ -12,5 +12,5 @@ import java.util.UUID;
 
 @Repository
 public interface ProductRepository extends JpaRepository<ProductModel, UUID> {
-    Page<ProductModel> findAllByPetshopName(String name, Pageable pageable);
+    Page<ProductModel> findAllByPetshopId(String id, Pageable pageable);
 }

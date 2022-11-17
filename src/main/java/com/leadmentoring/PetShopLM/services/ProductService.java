@@ -40,7 +40,7 @@ public class ProductService {
     }
 
 
-    public Page<ProductModel> findByPetshop(String name, Pageable pageable) {
-        return productRepository.findAllByPetshopName(name, pageable);
+    public Page<ProductModel> findByPetshop(String id, Pageable pageable) {
+        return productRepository.findAllByPetshopId(id, pageable);
     }
 }
