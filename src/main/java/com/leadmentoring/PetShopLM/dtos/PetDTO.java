@@ -12,6 +12,28 @@ public class PetDTO {
     @NotBlank
     private String description;
 
+    @NotBlank
+    private String breed;
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    @NotBlank
+    private String species;
+
     @NotNull
     private Float price;
 
