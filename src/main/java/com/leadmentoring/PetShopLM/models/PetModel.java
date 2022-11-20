@@ -38,7 +38,7 @@ public class PetModel implements Serializable {
     private String gender;
 
     @Column(name="pet_age", nullable = false)
-    private int age;
+    private String age;
 
     @Column(name="pet_weight", nullable = false)
     private float weight;

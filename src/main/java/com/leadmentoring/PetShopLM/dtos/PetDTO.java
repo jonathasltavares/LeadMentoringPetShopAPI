@@ -43,8 +43,8 @@ public class PetDTO {
     @NotBlank
     private String gender;
 
-    @NotNull
-    private int age;
+    @NotBlank
+    private String age;
 
     public String getName() {
         return name;
@@ -86,11 +86,11 @@ public class PetDTO {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
