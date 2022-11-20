@@ -4,6 +4,7 @@ package com.leadmentoring.PetShopLM.controllers;
 
 import com.leadmentoring.PetShopLM.dtos.PetDTO;
 import com.leadmentoring.PetShopLM.models.PetModel;
+import com.leadmentoring.PetShopLM.models.ProductModel;
 import com.leadmentoring.PetShopLM.services.PetService;
 
 import org.springframework.beans.BeanUtils;
@@ -49,7 +50,10 @@ public class PetController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(petModelOptional.get());
     }
-
+    @GetMapping("/petshop")
+    public ResponseEntity<Page<PetModel>> getByPetshop(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable, @RequestParam("id") UUID id) {
+        return ResponseEntity.status(HttpStatus.OK).body(petService.findByPetshop(id, pageable));
+    }
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletePet(@PathVariable(value = "id") UUID id){
         Optional<PetModel> petModelOptional = petService.findById(id);

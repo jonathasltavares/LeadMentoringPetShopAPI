@@ -36,4 +36,8 @@ public class PetService {
     public void delete(PetModel petModel) {
         petRepository.delete(petModel);
     }
+
+    public Page<PetModel> findByPetshop(UUID id, Pageable pageable) {
+        return petRepository.findAllByPetshopId(id, pageable);
+    }
 }
