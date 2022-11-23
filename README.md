@@ -15,7 +15,7 @@ Mentor: <a href="https://github.com/CCastro01">Christian Castro</a>
 Você pode ver esse projeto sendo colocado em prática:
 
 - [LMPetshop](https://lmpetshop.vercel.app/login) - [Repository](https://github.com/jonathasltavares/LeadMentoringPetShop)  
-email: admin@admin.com - password: 123
+Petshop fictício já criado para realizar login: email: admin@admin.com - password: 123
   
 
 ## API Reference  
